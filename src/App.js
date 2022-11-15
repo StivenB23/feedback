@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const bootcamps = [
+        {
+            id: '1',
+            name: 'Bootcamp 1',
+            average_rating: 8 
+        },
+        {
+            id: '2',
+            name: 'Bootcamp 2',
+            average_rating: 10 
+        }
+    ]
+    return (
+        <>
+            <h1>This is the Component App {bootcamps[0].name} </h1>
+            <ul>
+                { bootcamps.map((bootcamp) =>(
+                        <li> { bootcamp.name } </li>
+                    )  ) 
+                }
+            </ul>
+        </>
+    )
 }
-
-export default App;
+export default App
